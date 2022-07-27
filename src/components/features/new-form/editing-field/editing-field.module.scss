@@ -1,0 +1,35 @@
+@use '@styles/device-sizes';
+@use '@styles/mixins';
+
+$footer-border-color: #4c2b87;
+
+.editing-field {
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.7em;
+  }
+
+  &__button_save {
+    @media screen and (max-width: device-sizes.$tablet) {
+      & span {
+        margin: 0;
+      }
+    }
+
+    @media screen and (min-width: device-sizes.$tablet) {
+      &::after {
+        content: 'Сохранить';
+        display: inline-block;
+      }
+    }
+  }
+
+  &__footer {
+    padding-top: 0.9em;
+    border-top: 1px $footer-border-color solid;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
